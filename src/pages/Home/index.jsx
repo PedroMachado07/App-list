@@ -24,9 +24,13 @@ export function Home() {
 
   return (
     <div className="container">
+      <header>
       <h1>Lista de presença</h1>
-    
-    
+      <div>
+        <strong>Pedro</strong>
+        <img src="https://github.com/pedromachado07.png" alt="foto de perfil"/>
+      </div>
+      </header>
     <input 
     type="text" 
     placeholder="Digite o nome..." 
@@ -38,7 +42,13 @@ export function Home() {
     </button>
 
     {
-      students.map(student => <Card name={student.name} time={student.time}/>)
+      students.map(student => (
+      <Card 
+      key={student.time}
+      name={student.name} 
+      time={student.time}
+      />
+      ))
     }
     </div>
   )
